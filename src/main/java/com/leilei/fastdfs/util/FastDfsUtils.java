@@ -9,6 +9,12 @@ import org.csource.fastdfs.TrackerClient;
 import org.csource.fastdfs.TrackerServer;
 import org.springframework.web.multipart.MultipartFile;
 
+/**
+ * @author lei
+ * @version 1.0
+ * @date 2020/01/08 17:06
+ * @desc: FastDfsUtils
+ */
 @Slf4j
 public class FastDfsUtils {
      

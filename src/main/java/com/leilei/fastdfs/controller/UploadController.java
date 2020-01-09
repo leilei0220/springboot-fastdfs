@@ -12,7 +12,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 /**
- * @author Administrator
+ * @author lei
+ * @version 1.0
+ * @date 2020/01/08 17:26
+ * @desc: FastDfs  Controller
  */
 @RestController
 @Slf4j
