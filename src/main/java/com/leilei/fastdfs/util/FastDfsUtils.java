@@ -45,17 +45,22 @@ public class FastDfsUtils {
             return  null;
         }
     }
+
     /**
      * 下载文件
-     * @param groupName
-     * @param fileName
+     * 传入参数 组名+文件名：exmaple: /group1/M00/00/01/rBAEtF1ESveAJIrtAATb0rfoOcM166.jpg
+     * @param fileId
      * @return
      */
-    public static byte[] download(String groupName,String fileName) {
+    public static byte[] download(String fileId) {
+        fileId = fileId.substring(1);
+        String groupName = fileId.substring(0,fileId.indexOf("/"));
+        log.info("[组名] - [{}]", groupName);
+        String fileName = fileId.substring(fileId.indexOf("/")+1);
+        log.info("[文件名] - [{}]", fileName);
         try {
  
             ClientGlobal.init(CONF_FILENAME);
- 
             TrackerClient tracker = new TrackerClient();
             TrackerServer trackerServer = tracker.getTrackerServer();
             StorageClient storageClient = new StorageClient(trackerServer);
@@ -68,8 +73,8 @@ public class FastDfsUtils {
     }
 
     /**
-     *  删除文件的id 组名 +路径
-     *  /group1/M00/00/01/rBAEtF1ESveAJIrtAATb0rfoOcM166.jpg
+     *  删除文件的id 组名 +文件名
+     *  传入参数 组名+文件名：exmaple: /group1/M00/00/01/rBAEtF1ESveAJIrtAATb0rfoOcM166.jpg
      * @param fileId
      */
     public static void delete(String fileId){
