@@ -35,7 +35,7 @@ public class FastDfsUtils {
             StorageServer storageServer = null;
  
             StorageClient storageClient = new StorageClient(trackerServer, storageServer);
-            NameValuePair nvp[] = null;
+            NameValuePair[] nvp = null;
             String[] fileIds = storageClient.upload_file(file.getBytes(),extName,nvp);
             log.info("[组名] - [{}]", fileIds[0]);
             log.info("[路径] - [{}]", fileIds[1]);
